@@ -21,7 +21,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '20-lts'
+          node-version: '20.x'
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -45,9 +45,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_457B2304D0944F4F8563888B8BF77AC2 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_ED412B2D45B04D3D8C4838F12F6F0991 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_7BD8477EAA334C878B1CB77015C80987 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_31D13AEE5603415BB5B05F2243F390BB }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_F3347E8BBEF146A8B32EEC8E4B492346 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_7F99EB06B2A9433D8382B1B88CF6D86E }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
@@ -56,5 +56,4 @@ jobs:
           app-name: 'webhr'
           slot-name: 'Production'
           package: .
-
           
